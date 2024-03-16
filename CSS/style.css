@@ -1,0 +1,1010 @@
+/* 
+1.posicionamiento
+2. Modelo de caja (box model)
+3. tipografia
+4. estilos con temas visuales
+5. otros
+*/
+:root
+{
+    /* colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --black: #282623;
+    --grey: #BABABA;
+    --off-white: #FAF8F7;
+    --just-white: #FFFFFF;
+}
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html
+{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+                    /* Estilos Header */
+
+/* Header
+Aplicamos un position: relative.
+Usamos display: flex y flex-direction: colum para poder acomodarlo por medio de columnas.
+Ajustamos el ancho al 100% de la pantalla y el alto a 334px.
+Limitamos el ancho a 320px como mínimo.
+Centramos el texto con text-align: center. */
+header
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    align-items: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+
+}
+
+/* Img
+Definimos las dimensiones del logo con un ancho de 150px y un alto de 24px.
+Ajustamos el margen superior en 60px.
+Como estamos usando display: flex en el contenedor padre, centramos el logo con align-self: center. */
+header img
+{
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+}
+
+/* Div
+Llamamos al contenedor directamente por el nombre de su clase.
+Ajustamos el ancho del contenedor para que siempre se mantenga el 90% entre 288px y 900px. Es decir, no va a crecer más de 900px ni se encogerá menos de 288px.
+Ajustamos la altura a 218px.
+Añadimos un margen superior de 40px.
+Centramos el texto con text-align: center.
+Centramos el contenedor con align-self: center. */
+.header-tittle-container
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+/* Llamamos la etiqueta h1 usando el nombre de la clase contenedora .header–title-container. Y sí, podríamos llamar solo la etiqueta h1, después de todo sólo debe existir una en todo el documento, ¿verdad? Es así, sin embargo, ser específicos es parte de las buenas prácticas. Cuando avances más usarás librerías como Bootstrap que pueden traer consigo estilos para ciertas etiquetas. Siendo específicos los estilos que apliquemos no se verán afectados por estas. Ya sabes, siempre trata de ser específico.
+Ajustamos el tamaño de fuente con font-size: 2.4rem (24px) y el ancho con font-weight: bold.
+Ajustamos la dimensión entre líneas o interlineado con line-height: 2.6rem.
+Cambiamos su color con la variable correspondiente, ***color: var(–just-white)***. */
+.header-tittle-container h1
+{
+    color: var(--just-white);
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+}
+
+/* Cómo dar estilos al párrafo
+Llamamos nuestra etiqueta de párrafo desde la clase contenedora .header–title-container.
+Añadimos un margen superior para separarla un poco del título con margin-top: 25px.
+Ajustamos el tamaño con font-size: 1.4rem y su grosor con font-weight: 500.
+Le damos un interlineado con line-height 1.8rem.
+Cambiamos el color de fuente con la variable correspondiente, ***color: var(–soft-orange)***. */
+.header-tittle-container p
+{
+    color: var(--soft-orange);
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-top: 25px;
+    line-height: 1.8rem;
+}
+
+/* Cómo aplicar astilos al botón
+Sigue estos pasos:
+
+Llamamos la clase del botón desde la clase contenedora con .header–title-container .header–button.
+Definimos su posición como absolute. Al hacerlo toma como posición relativa a su padre directo (en este caso el header) y nos permite posicionar el contenido en cualquier parte del contenedor. Recuerda que sólo cuando la posición es absoluta es que podemos añadir un top, bottom, left y right, debido a que está fijo. Esto no pasa si su posición fuera relativa.
+Con left: calc(50% - 118px) le decimos que queremos mantenerlo en el centro con el 50%, pero como el botón es muy grande, que reste 118px a la izquierda, centrándolo.
+Desplazamos hacia abajo el botón del contenedor con un top de 270px.
+Añadimos un margen superior de 35px.
+Añadimos espacio interno con padding: 15px.
+Definimos su ancho en 229px y su altura en 48px.
+Le damos el color de fondo correspondiente con la variable –off-white.
+Agregamos la sombra que le da el efecto de flotar.
+Con border: none quitamos cualquier posible borde que agregue el navegador por defecto.
+Redondeamos los bordes con un border-radius: 5px.
+Ajustamos el tamaño de la fuente en 1.4rem y la hacemos negrita con font-weight: bold.
+Le quitamos el subrayado con text-decoration: none y le damos un color negro con la variable que creamos. */
+.header-tittle-container .header-button
+{
+    position: absolute;
+    left: calc(50% - 118px);
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /* Sombras */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    /* border radius */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black);
+}
+
+/* Cómo dar estilos al ícono
+Llamamos la etiqueta span donde crearemos el ícono desde su clase contenedora con .header–button span.
+Definimos el display en inline-block para que se mantenga en el mismo espacio que el texto que lo acompaña.
+Definimos su ancho en 13px y su alto en 8px.
+Añadimos un margin-left: 10px para separarlo un poco horizontalmente del texto.
+Llamamos el archivo del ícono con background-image. */
+.header-button span
+{
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url("../ASSETS/ICONS/arrow-bottom.svg");
+}
+                       /* Estilos Main */
+/* main
+Ajustamos el ancho al 100% y la altura en auto porque el mismo contenido que agreguemos definirá el espacio que vaya a ocupar.
+
+Agregamos un min-width: 320px para que no se distorcione si llega a medidas más pequeñas.
+
+Le damos un color de fondo con la variable --off-white. */
+main
+{
+    width: 100%;
+    height: auto;
+    background-color: var(--off-white);
+}
+
+/* .main-exchange-container
+Llamamos al primer contenedor principal en que estamos trabajando y ajustamos de igual manera el ancho al 100% y la altura en auto.
+
+Añadimos un padding-top: 80px y un padding-bottom: 30px para agregar espacio tanto arriba como abajo.
+
+Alineamos el texto al centro. */
+.main-exchange-container
+{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+/* .main-exchange-container–title
+Llamamos al contenedor de la sección de texto y le damos un ancho del 90%. Limitamos el ancho mínimos a 288px y un máximo de 900px.
+
+Añadimos un margin: 0 auto, para que, pese a no ocupar el 100% del ancho, esté siempre en el centro. */
+.main-exchange-container-title
+{
+    width: 90%;
+    min-width: 238px;
+    max-width: 900px;
+    margin: 0 auto; 
+}
+
+/* Pasos para agregar imagen de fondo
+Una vez estés en el proyecto:
+
+Llamamos la etiqueta div desde el contenedor principal de la sección.
+Primero debemos crear el espacio que va a ocupar que exista. De otra manera no lo podremos ver. Añadimos un ancho y alto de 200px.
+Centramos el contenido con margin: 0 auto.
+Añadimos un margin-bottom: 50px para alejarla un poco del texto.
+Agregamos la imagen con background-image.
+background-size: cover permite que la imagen cubra todo el ancho conservando su proporción original, es decir, no crece más del límite.
+background-position: center para que siempre, sin importar el tamaño del contenedor, tengamos una vista del centro de la imagen.
+background-repeat: no-repeat para evitar que se repita en caso que la imagen sea más pequeña que el contenedor. */
+.main-exchange-container .backgroundImg
+{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url("../ASSETS/img/Bitcoin.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Pasos para agregar texto
+Dentro del texto tienes dos elementos importantes:
+
+Título
+Llamamos la etiqueta h2 desde el contenedor principal de la sección.
+Añadimos un margin-bottom: 30px para separarlo del párrafo.
+Ajustamos su tamaño a 2.4rem y la hacemos negrita con font-wight: bold.
+Le damos un interlineado de 2.6rem.
+Le damos color con la variable –black. */
+.main-exchange-container h2
+{
+    margin-bottom: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    height: 2.6rem;
+    color: var(--black);
+}
+
+/* Párrafo
+Llamamos la etiqueta p desde el contenedor principal de la sección.
+Añadimos un margin-bottom: 50px para alejarla del final del contenedor.
+Ajustamos su tamaño a 1.4rem y le damos un ancho con font-wight: 500.
+Le damos un interlineado de 2.6rem.
+Le damos color gris con color: #757575. En este caso el color no está en una variable porque lo usamos una sola vez en todo el documento .css. */
+.main-exchange-container p
+{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+                         /* Tablas de exchange*/
+
+/* Aplicar estilos al contenedor principal
+Lo primero es llamar la clase del contenedor principal de la tabla con main-currency-table.
+Le damos un ancho del 70% porque no lo ocupa todo.
+Limitamos el ancho mínimo de 235px y máximo de 500px.
+La damos una altura de 360px.
+Centramos el contenido con margin: 0 auto.
+Añadimos la fuente que usan las tablas con font-family: “Inter”, sans-serif. */
+.main-currency-table
+{
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+
+/* Aplicar estilos al título
+Podríamos llamar la clase del título y empezar a aplicar estilos, sin embargo, recordemos que tenemos dos tablas con títulos distintos. Por lo tanto, conviene ser específicos y llamar primero el contenedor principal de la tabla y luego el título, de esta manera: .main-currency-table .currency-table–title.
+Separamos el título de la tabla con margin-bottom: 15px.
+Ajustamos el tamaño de fuente a 1.8rem y la tornamos negrita con bold.
+Agregamos un interlineado de 2.3rem. */
+.main-currency-table .currency-table-title
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Aplicar estilos al contenedor directo
+Llamamos al div que contiene la tabla con .currency-table–container.
+Le damos un ancho del 90% de su contenedor padre.
+Establecemos un ancho mínimo de 230px y un máximo de 300px.
+Ajustamos la altura en 250px.
+Centramos el contenido con margin: 0 auto. */
+.main-currency-table .currency-table-container
+{
+    width: 90%;
+    min-width: 235px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+
+}
+
+/* Aplicar estilos a la tabla
+Llamamos a la etiqueta table desde su contenedor padre con .currency-table–container table.
+Le damos un ancho y alto del 100% para ocupar todo el espacio del contenedor padre.
+.currency-table--container table */
+.currency-table-container table
+{
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Celdas
+Llamamos a la etiqueta td desde su contenedor padre con .currency-table–container td
+Le damos un ancho del 50% porque ocupan la mitad de espacio que las filas.
+Ajustamos el tamaño de fuente a 1.6rem y su ancho en 500.
+Agregamos un interlineado de 1.9rem.
+Cambiamos el color con la variable –grey.
+Agregamos un color de fondo con la variable –just-white. */
+.currency-table-container td
+{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+
+/* Cómo agregar bordes de la tabla
+¿Recuerdas que creamos clases específicas para los botones situados en las esquinas? Pues es momento de llamarlos.
+
+Empezemos por el lado izquierdo de la tabla, y lo llamamos desde su contenedor con .currency-table–container .table__top-left.
+Le agregamos un border-radius: 15px 0 0 0 en donde cada una de las cuatro posiciones representa una esquina de la caja que estamos estilando: esquina superior izquierda, esquina superior derecha, esquina inferior derecha y esquina inferior izquierda, respectivamente.
+Aplicamos estos valores a cada una de las esquinas. */
+.currency-table-container .table-top-left
+{
+    border-radius: 15px 0 0 0;
+}
+
+.currency-table-container .table-top-right
+{
+    border-radius: 0 15px 0 0;
+}
+.currency-table-container .table-bottom-left
+{
+    border-radius: 0 0 0 15px;
+}
+.currency-table-container .table-bottom-right
+{
+    border-radius: 0 0 15px 0;
+}
+
+/* Cómo aplicar texto de precios
+Llamamos la clase que aplicamos a todos los textos de la columna derecha con .currency-table–container .table__right.
+Ajustamos su tamaño a 1.4rem y le damos un ancho normal.
+Agregamos un interlineado de 1.7rem.
+Ajustamos el color usado en el diseño #757575. */
+.currency-table-container .table-right
+{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+/* Cómo agregar íconos
+Observando el diseño, nos damos cuenta que hay dos tipos de flechas: hacia arriba y abajo. Entonces tenemos que dividir y aplicar a las etiquetas span estas dos clases: up y down.
+
+Llamamos a las etiquetas span con su clase desde el contenedor de la tabla con .currency-table–container .down.
+Usamos display: inline-block para mantener el ícono en la misma línea que el texto.
+Le damos un ancho y alto de 15px.
+Agregamos un margin-left: 10px para separarlo del texto.
+Llamamos la imagen desde su dirección con ***background-image: url("")***.
+Ajustamos su tamaño al del contenedor con cover, lo centramos y especificamos que no se repita la imagen.
+Aplicamos los mismos estilos para la clase .currency-table–container .up. Sólo cambiamos la url del ícono. */
+.currency-table-container .down
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url(../ASSETS/ICONS/trending-down.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currency-table-container .up
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url(../ASSETS/ICONS/trending-up.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currency-table-date
+{
+    width: max-content;
+    height: 30px;
+    margin: 15px auto 0;
+    padding: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+.currency-table-date p
+{
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--warm-black);
+}
+
+.main-currency-table .currency-table-second-title
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secondary-blue);   
+    font-family: 'DM Sans', sans-serif;
+}
+.main-currency-table .currency-table-second-date
+{
+    width: max-content;
+    height: 30px;
+    margin: 15px auto 0;
+    padding: 8px;
+    background-color: var(--soft-blue);
+    border-radius: 8px;
+}
+.currency-table-second-date p
+{
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--warm-black);
+}
+
+/* Aplicar estilos en el contenedor principal
+Llamamos la clase del contenedor de la sección con .main-product-detail.
+Le asignamos un position: relative. Esto es porque el contenedor del logo flotante se creará con position: absolute. Para que un position: absolute pueda posicionarse, busca al primer contenedor padre que tenga un position: relative. Por esto lo colocamos aquí y se mantenga en este contenedor.
+Ajustamos su ancho en un 100% y lo limitamos en un mínimo de 320px.
+Colocamos la altura en auto para que se ajuste a lo que necesite el contenedor.
+Añadimos un padding 20px arriba y abajo y 10px a los lados. */
+.main-product-detail
+{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--warm-black);
+}
+/* Pasos para aplicar estilos al logo
+Llamamos la clase directa de la etiqueta span del logo con .product-detail–batata-logo.
+Le asignamos un position: absolute para que esté por encima de los demás elementos.
+Ajustamos un ancho en 40px y un alto en 25px.
+Para centrarlo entre las dos secciones:
+
+Elevamos la mitad del logo hacia fuera del contenedor con top: -10px.
+Lo centramos con ***left: calc(50% - 20px)***, donde 50% lo coloca en la mitad, pero no lo centra. Esto se debe a que el logo tiene dimensiones (40px para ser precisos), y como queremos que esté justo en la mitad, le quitamos la mitad de su ancho (20px), posicionándolo justo en el centro.
+Llamamos la imagen con ***background-image: url("")***. */
+.batata-logo
+{
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    left: calc(50% - 20px);
+    top: -10px;
+    background-image: url("../ASSETS/img/Batabit.svg");
+}
+
+/* Agregar estilos al título
+Ten en cuenta estos 3 elementos:
+
+Contenedor
+Llamamos la clase del contenedor de nuestro título con .product-detail–title.
+Ajustamos su ancho para que ocupe el 90% de su contenedor principal.
+Establecemos el ancho mínimo en 288px.
+Colocamos el alto en auto para que ocupe lo que necesite el texto. Esto es una buena práctica para que el texto reaccione bien sin importar que tanto se vea comprimido por el ancho.
+Lo centramos con un margin: 0 auto.
+Separamos el texto del extremo superior con un margin-top: 50px.
+Centramos el texto con text-align: center. */
+.product-detail-title
+{
+    width: 90%;
+    min-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* H2
+Llamamos la etiqueta h2 desde su contenedor directo con .product-detail–title h2.
+Aplicamos un margin-bottom: 20px para separarlo del párrafo de abajo.
+Ajustamos el tamaño de la fuente a 2.4rem y aplicamos un grosor bold.
+Ajustamos el interlineado en 2.6rem.
+Cambiamos el color con la variable –just-white. */
+.product-detail-title h2
+{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--off-white);
+}
+
+/* p
+Llamamos la etiqueta p desde su contenedor directo con .product-detail–title p.
+Aplicamos un margin-bottom: 20px para separarlo de las secciones de abajo.
+Ajustamos el tamaño de la fuente a 1.4rem y aplicamos un grosor de 500.
+Ajustamos el interlineado en 1.8rem.
+Cambiamos el color a #808080 como nos indica el diseño en Figma. */
+.product-detail-title p
+{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/* Crear estilos en el contenedor
+Llamamos la clase del contenedor de la primera tarjeta con .product-detail–card.
+Ajustamos su ancho al 90% y alto en 150px.
+Le damos un ancho mínimo de 288px y un máximo de 400px. Esto es para que evite crecer más y se distorsione en pantallas muy grandes.
+Añadimos un margen superior e inferior de 15px y lo hacemos auto a los lados para que se centre.
+Añadimos un padding de 15px.
+Un color de fondo –black para que contraste con el color del contenedor principal.
+Redondeamos sus esquinas con border-radius: 5px.
+Creamos una sombra para la caja con ***box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16)***. */
+.product-detail-card
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.16);
+}
+
+/* Aplicando estilos al ícono
+Llamamos la clase de nuestra etiqueta span desde la clase de su contenedor.
+Colocamos display: inline-block para que el ícono ocupe una línea de espacio.
+Le damos un alto y ancho de 20px.
+Añadimos un margin-bottom: 10px.
+Agregamos el ícono con ***background-image: url(""***).
+Ajustamos que ocupe toda la caja con cover, lo centramos y nos aseguramos que no se llegue a repetir la imagen. */
+.product-detail-card .clock
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url("../ASSETS/ICONS/clock.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail-card .eye
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url("../ASSETS/ICONS/eye.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail-card .dollar
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url("../ASSETS/ICONS/dollar-sign.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail-card .check
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url("../ASSETS/ICONS/check-circle.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Aplicar estilos al texto
+Ten en cuenta los siguientes dos elementos:
+
+Título
+Llamamos la etiqueta que contiene nuestro título por el nombre de su clase con .product–card-title.
+Le damos un margin-bottom: 15px.
+Ajustamos el tamaño de fuente en 1.8rem y le damos un ancho bold.
+Ajustamos el interlineado en 1.8rem y le damos color con la variable –just-white. */
+.product-card-title
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--just-white);
+}
+
+/* Cuerpo
+Llamamos la etiqueta que contiene nuestro texto cuerpo por el nombre de su clase con .product–card-body.
+Ajustamos el tamaño de fuente en 1.4rem y le damos un ancho de 500.
+Ajustamos el interlineado en 1.8rem y le damos color de #808080. */
+.product-card-body
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/* Estilos contenedor
+Llamamos la sección por su clase con .bitcoin-img-container.
+Ajustamos el ancho al 100% de la pantalla y lo limitamos a 320px.
+Le damos una altura del 50% de la altura de la pantalla en que se visualice con height: 50vh.
+Llamamos la imagen de fondo con ***background-image: url("")***.
+Centramos la imagen con respecto al contenedor con center.
+Es importante colocar background-repeat: no-repeat para que la imagen no se duplique al pasar a dimensiones más grandes como la de una laptop. */
+.bitcoin-img-container
+{
+    width: 100%;
+    min-width: 320px;
+    height: 60vh;
+    background-image: url(../ASSETS/img/bitcoinbaby2x.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Estilos texto
+Llamamos la etiqueta h2 desde su contenedor con .bitcoin-img-container h2.
+Agregamos un padding superior de 60px.
+Ajustamos el tamaño de fuente a 2.4rem y su ancho en bold.
+Le damos un interlineado de 2.6rem.
+Cambiamos su color con la variable –just-white.  */
+.bitcoin-img-container h2
+{
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+    text-align: center;
+}
+
+/* Llamar al contenedor principal
+Llamamos la sección principal con su clase .main-plans-container.
+Ajustamos su ancho en un 100% y lo limitamos a un mínimo de 320px.
+Creamos un espaciado interno inferior de 70px.
+Centramos todo el texto contenido con text-align: center.
+.main-plans-container { */
+.main-plans-container
+{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+/* Cómo aplicar estilos al contenedor título
+Llamamos el contenedor del texto principal con su clase .plans–title.
+Ajustamos su ancho en un 90% y lo limitamos a un mínimo de 288px.
+Colocamos el alto en auto para que se ajuste automáticamente en la relación al espacio que ocupe el texto.
+Como hay un 10% del ancho restante que no se ocupa, lo centramos con margin: 0 auto.
+Creamos un margen inferior de 50px para separarlo de las tarjetas. */
+.plans-title-container
+{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+}
+/* Título
+Llamamos la etiqueta h2 desde su contenedor directo con .plans–title h2.
+Ajustamos el tamaño de la fuente a 2.4rem y su ancho en bold.
+Agregamos un interlineado de 2.6rem y cambiamos su color con la variable –black. */
+.plans-title-container h2
+{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+/* Descripción
+Llamamos la etiqueta p desde su contenedor directo con .plans–title p.
+Ajustamos el tamaño de la fuente a 1.4rem y su ancho en 500.
+Agregamos un interlineado de 1.8rem y cambiamos su color al valor #757575. */
+.plans-title-container p
+{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    color: #757575;
+}
+
+/* Cómo hacer un scroll
+Llamamos la clase del contenedor de las tarjetas con .plans-container–slider.
+display: flex ya nos genera un scroll horizontal, pero se desborda del contenedor y se genera un overflow por fuera.
+Le damos una altura de 316px, mayor al contenedor de las tarjetas.
+Generamos un scroll sobre el eje x con overflow-x: scrol. Esta propiedad establece lo que se muestra cuando el contenido desborda los bordes izquierdo y derecho de un elemento a nivel de bloque. Puede que no sea nada, una barra de desplazamiento o el contenido adicional.
+overscroll-behabior establece lo que hace un navegador cuando alcanza el límite de un área de desplazamiento.
+Para que al deslizarnos sobre las tarjetas la vista se centre en el centro de cada una de ellas como si tuviesen un iman, usamos scroll-snap-type: x proximity. */
+.plans-container-slider
+{
+    display: flex;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+/* Contenedor de la tarjeta
+Primero llamamos la clase del contenedor de la tarjeta con .plans-container–card.
+Con position: relative aseguramos que el texto flotante se quede en este contenedor.
+Le damos un ancho del 70% para que se pueda ver parte de las otras dos tarjetas.
+Limitamos su ancho mínimo en 230px y su máximo en 300px.
+Le damos una altura absoluta de 250px.
+Agregamos un margen superior de 50px e inferior de 0px. Centramos la caja con auto.
+Generamos un padding superior e inferior de 0, y de 15px a los lados.
+Cambiamos el color de fondo de la tarjeta para que contraste con el color de fondo de su contenedor con la variable –just-white.
+Redondeamos las esquinas de la tarjeta con border-radius: 15px.
+Generamos una sombra a la caja con un box-shadow. 
+Primero, para que nuestro contenedor pueda generar el scroll entre las tarjetas estas deben tenerlo. Centramos todas las tarjetas para general un scroll con scroll-snap-align: center. Esta línea la colocamos justo debajo del position: relative del contenedor de nuestra tarjeta.*/
+.plans-container-card
+{
+    position: relative;
+    scroll-snap-align: center;
+    width: 65%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 5px 0;
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89,73,30,0.16);
+}
+
+/* Botón flotante
+Llamamos la clase del párrafo con .recommended.
+Establecemos su posición en absolute para moverlo dentro del contenedor.
+Ajustamos su ancho en 120px y su alto en 31px.
+Lo movemos hacia arriba hasta sacarlo del contenedor con top: -15px.
+Centramos la caja con ***left: calc(50% - 60px)***.
+Ajustamos el tamaño de fuente en 1.2rem.
+Le damos un espaciado interno en todos los lados de padding: 6px.
+Ajustamos el color de fondo con la variable –bitcoin-orange y el color del texto con –just-white.
+Redondeamos las esquinas de la caja con border-radius: 8px. */
+.recommended
+{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    left: calc(50% - 60px);
+    top: -15px;
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    color: var(--just-white);
+    font-size: 1.2rem;
+    padding: 6px;
+}
+.basic
+{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    left: calc(50% - 60px);
+    top: -15px;
+    background-color: var(--secondary-blue);
+    border-radius: 8px;
+    color: var(--just-white);
+    font-size: 1.2rem;
+    padding: 6px;
+}
+.limited
+{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    left: calc(50% - 60px);
+    top: -15px;
+    background-color: rgb(146, 11, 11);
+    border-radius: 8px;
+    color: var(--just-white);
+    font-size: 1.2rem;
+    padding: 6px;
+}
+
+/* Título
+Llamamos la clase de la etiqueta h3 con .plan-card–title.
+Le damos un espaciado superior con padding: 30px.
+Ajustamos el tamaño de fuente en 1.4rem y su peso en 500.
+Le damos un interlineado de 1.8rem.
+Ajustamos el color del texto con la variable –black. */
+.plan-card-title
+{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+}
+
+/* Precio
+Llamamos la clase de la etiqueta p con .plan-card–price.
+Le damos un espaciado superior e inferior de 30px y 0 a los lados.
+Ajustamos el tamaño de fuente en 5.2rem y su peso en bold.
+Le damos un interlineado de 5.3rem.
+Ajustamos el color del texto con la variable –black. Para el signo de dólar:
+
+Llamamos la etiqueta sup desde su clase contenedora con .plan-card–price sup.
+Ajustamos el tamaño de fuente en 1.2rem y su peso en 300.
+Ubicamos el signo hasta arriba con vertical-align: 25px.*/
+.plan-card-price
+{
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5.3rem;
+    color: black;
+}
+
+/*  */
+.plan-card-price span
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: absolute;
+    top: 35px;
+    left: 75px;
+}
+
+
+/* Descripción
+Llamamos la etiqueta de párrafo con su clase .plan-card–saving.
+Le damos un tamaño de fuente de 1.2rem y cambiamos su color a #757575. */
+.plan-card-saving
+{
+   font-size: 1.2rem;
+   color: #757575; 
+}
+
+/* Cambiar el botón por defecto
+Llamamos la clase del botón con .plan-card–ca.
+Le damos un ancho de 150px y un alto de 48px.
+Añadimos un margen superior de 20px.
+Cambiamos su color de fondo a #faf8f7 de acuerdo al proporcionado en el diseño.
+Establecemos el grosor del borde en 2px y le damos el color de la variable –bitcoin-orange.
+Redondeamos ligeramente las esquinas con border-radius: 4px.
+En caso que no se aplique la fuente que establecimos al inicio del documento, la traemos y la pegamos en el estilo actual con font-family: ‘DM Sans’, sans-serif.
+Ajustamos el tamaño de fuente en 1.4rem y su peso en bold.
+Le damos un interlineado de 1.8rem y el color de la variable –black. */
+.plan-card-ca
+{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #FAF8F7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Cómo modificar el Ícono
+Llamamos la etiqueta span contenedora de nuestro ícono desde la clase del botón con .plan-card–ca span.
+Usamos display: inline-block para que se mantengan en la misma línea que el texto.
+Le damos un ancho y alto de 20px.
+Insertamos el ícono con un ***background-image: url("")***.
+Para poder colocar el ícono a la misma altura del texto, usamos vertical-align: text-bottom. */
+.plan-card-ca span
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../ASSETS/ICONS/orange-right-arrow.svg);
+    vertical-align: text-bottom;
+}
+.plan-card-ca2
+{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #FAF8F7;
+    border: 2px solid var(--secondary-blue);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+}
+.plan-card-ca2 span
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../ASSETS/ICONS/orange-right-arrow.svg);
+    vertical-align: text-bottom;
+}
+.plan-card-ca3
+{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #FAF8F7;
+    border: 2px solid rgb(146, 11, 11);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+}
+.plan-card-ca3 span
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../ASSETS/ICONS/orange-right-arrow.svg);
+    vertical-align: text-bottom;
+}
+
+/* Contenedor
+Llamamos la etiqueta footer directamente para aplicar estilos.
+Usamos display: flex para que ambas secciones estén una a lado de otra.
+Le damos un ancho del 100% y un alto de 150px.
+Establecemos el color de fondo con la variable –bitcoin-orange. */
+footer
+{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+/* Secciones
+Llamamos la etiqueta section desde la etiqueta footer para trabajar con las dos secciones.
+Mantenemos el display: flex.
+Centramos las cajas con justify-content: center.
+Alineamos los elementos dentro de los contenedores con align-items: center. */
+footer section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+/* Llamamos la etiqueta ul desde la clase .left de la etiqueta footer para ser específicos.
+Ajustamos el ancho de la fuente en 1.4rem y su peso en 500.
+Le damos un interlineado de 1.8rem.
+Quitamos los bullet points de los elementos con list-style: none */
+footer .left ul
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+
+}
+
+/* A cada elemento de la lista le damos un margen superior e inferior de 10px y 0 a los lados.
+Quitamos el subrrayado de los textos que genera la etiqueta a con text-decoration: none.
+Cambiamos el color del texto con –just-white. */
+.left li
+{
+    margin: 10px 0;
+
+}
+.left a
+{
+    text-decoration: none;
+    color: var(--just-white);
+}
+

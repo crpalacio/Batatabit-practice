@@ -1,0 +1,45 @@
+/* Ajustando la sección de tablas
+Al pasar a pantallas más grandes se genera demasiado espacio alrededor de las tablas. Colocarlas una al lado de otra ayuda a tener menos scroll vertical y una vista más cómoda para el usuario.
+
+Para ello:
+
+Llamamos la clase del contenedor de las tablas con .main-tables-container.
+Usamos display: flex para que las tablas se acomoden juntas.
+Ajustamos el ancho a 930px para que no crezca más de eso.
+Centramos las tablas con margin: 0 auto. */
+.main-tables-container
+{
+    display: flex;
+    width: 930px;
+    margin: 0 auto;
+}
+
+/* Ajustando la sección de beneficios
+Tenemos el mismo problema que el anterior. Hay demasiado espacio sobrante en el que debemos reacomodar los elementos.
+
+Para ello:
+
+Llamamos la clase contenedora de las tarjetas con .product-cards–container.
+Las acomodamos al ancho de la caja con display: flex.
+Acomodamos las cajas en columnas con flex-wrap: wrap.
+Limitamos el crecimiento de la caja en 930px. Así nos aseguramos que no se vayan a crear más de dos columnas.
+Centramos las tablas con margin: 0 auto. */
+.product-cards-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 930px;
+    margin: 0 auto;
+}
+
+/* Ajustando la sección de planes
+Como podemos observar, las tarjetas de planes se quedan a la izquierda de la pantalla al superar dimensiones de 930px. Esto se debe a que usa display: flex para funcionar.
+
+Por lo que sin cambiarlo, agregamos una simple línea de código a la clase del mismo contenedor:
+
+Centra el contenido con justify-content: center. */
+.plans-container-slider
+{
+    justify-content: center;
+}

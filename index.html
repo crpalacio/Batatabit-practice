@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./mediaqueries/tablet.css" media="(min-width:930px)"/>
+    <title>Batatabit</title>
+</head>
+<body>
+
+    <!-- Cómo hacer la maquetación del header
+Lo primero es crear una etiqueta img dentro del header para el logo.
+Luego un contenedor div que contenga:
+
+h1 para el título principal
+p para el párrafo
+Una etiqueta a para el call to action, que contenga también una etiqueta span para el pequeño ícono a su lado. -->
+    <header>
+        <img src="./ASSETS/img/Batabit.svg" alt="">
+        <div class="header-tittle-container">
+            <h1>La proxima revolucion en el intercambio de criptomonedas.</h1>
+            <p>Batatabit te ayuda a navegar entre los diferentes precios y tendencias.</p>
+            <a href="#plans" class="header-button">Conoce nuestros planes <span></span></a>
+        </div>
+    </header>
+    <main>
+
+        <!-- Creamos el segundo contenedor div para el título h2 y el párrafo p, en el que añadimos el contenido escrito en el diseño. Añadimos la clase main-exchange-container–title, en que main-exchange-container es el bloque y title el elemento.
+        Las tablas que muestra el valor de las monedas es una sección en sí, por lo que es más correcto crear un section en lugar de un div. El div lo colocamos dentro. -->
+        <section class="main-exchange-container">
+            <div class="backgroundImg">
+                
+            </div>
+            <div class="main-exchange-container-title">
+                <h2>Visibilizamos todas las tasas de cambio.</h2>
+                <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo.</p>
+            </div>
+
+            <!-- Estructura de tabla de monedas
+            
+            Vamos a la sección que creamos anteriormente con la clase de main-tables-container.
+            Dentro del div, creamos una etiqueta p para el texto “Monedas”.
+            Abajo creamos otra etiqueta div que contendrá la etiqueta table, que la tabla en sí.
+            Trabajamos con dos etiquetas más: tr (table row) para las filas y td (table data) que va dentro, para la información de cada fila.
+            Agregamos la información correspondiente, en base al diseño sobre el que trabajamos. -->
+            <section class="main-tables-container">
+                <div class="main-currency-table">
+                    <p class="currency-table-title">Monedas</p>
+                    <div class="currency-table-container">
+                        <table>
+                            <tr>
+                                <td class="table-top-left">Bitcoin</td>
+                                <td class="table-top-right table-right">$1.96 <span class="down"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td class="table-right">$0.07 <span class="up"></span></td>
+                            </tr>
+                           
+                            <tr>
+                                <td>Ripple</td>
+                                <td class="table-right">$2.17 <span class="down"></span></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="table-bottom-left">Stellar</td>
+                                <td class="table-right table-bottom-right">$4.96 <span class="down"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="currency-table-date">
+                        <p> <b>Actualizado:</b> 7 Noviembre 8:06 </p>
+                    </div>
+                </div>
+                <div class="main-currency-table">
+                    <p class="currency-table-second-title">Comisiones</p>
+                    <div class="currency-table-container">
+                        <table>
+                            <tr>
+                                <td class="table-top-left">Bitrade</td>
+                                <td class="table-top-right table-right">$12.96</td>
+                            </tr>
+                            <tr>
+                                <td>Bitpreco</td>
+                                <td class="table-right">$13.07</td>
+                            </tr>
+                           
+                            <tr>
+                                <td>Novadax</td>
+                                <td class="table-right">$13.15</td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="table-bottom-left">Stellar</td>
+                                <td class="table-right table-bottom-right">$14.96</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="currency-table-second-date">
+                        <p><b>Actualizado:</b> 7 Noviembre 8:06 </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Cómo hacer la maquetación de seccion de beneficios
+        Abrimos la segunda sección y le damos una clase con base a su contenido. Como detalla lo que es el producto Batatabit, el nombre podría ser main-product-detail.
+        Creamos la clase para el contenedor del título principal con product-detail–title.
+        Creamos las etiquetas que anteriormente encontramos en el diseño como span, h2, p, section y article.
+        Creamos la clase product-detail–batata-logo para la etiqueta span que contendrá nuestro logo.
+        Dentro del primer artículo:
+
+        La primera etiqueta p será el título de la tarjeta, y el nombre de su clase será product–card-title, con la estructura bloque–elemento.
+        La segunda etiqueta p será el cuerpo de la tarjeta, y el nombre de su clase será product–card-body.
+        Por último, agregamos el contenido dentro de cada etiqueta de texto. -->
+        <section class="main-product-detail">
+            <span class="batata-logo"></span>
+            <div class="product-detail-title">
+                <h2>Creamos un producto sin comparación.</h2>
+                <p>Confiable y diseñado para su uso diario.</p>
+            </div>
+            <section class="product-cards-container">
+                <article class="product-detail-card">
+                    <span class="clock"></span>
+                    <p class="product-card-title">Tiempo real</p>
+                    <p class="product-card-body">Nuestra API toma información minuto a minuto sobre las tasas que más determinan el comportamiento.</p>
+                </article>
+            </section> 
+            <section class="product-cards-container">
+                <article class="product-detail-card">
+                    <span class="eye"></span>
+                    <p class="product-card-title">No hay tasas escondidas</p>
+                    <p class="product-card-body">Ni en la compra o al momento de exit, Batabit siempre te muestra el costo real de lo que estás adquiriendo.</p>
+                </article>
+            </section>            
+            <section class="product-cards-container">
+                <article class="product-detail-card">
+                    <span class="dollar"></span>
+                    <p class="product-card-title">Compara monedas</p>
+                    <p class="product-card-body">No más rumores, con Batabit sabrás el valor real de casa moneda en el mercado actual.</p>
+                </article>
+            </section>
+            <section class="product-cards-container">
+                <article class="product-detail-card">
+                    <span class="check"></span>
+                    <p class="product-card-title">información confiable</p>
+                    <p class="product-card-body">Nuestras fuentes están 100% verificadas y continuamos auditanmdo su contenido miesntras se actualizan.</p>
+                </article>
+            </section>                       </section>
+
+            <!-- Maquetando la sección comodín
+            El análisis de esta sección es muy sencillo. Encontramos sólo un par de elementos que debemos crear: un título y una imagen de fondo.
+
+            Maquetación
+            Lo primero es abrir la siguiente sección que tenemos en nuestro index.html y agregarle una clase para poder identificarla.
+            Creamos un h2 para aplicar el título.-->
+        <section class="bitcoin-img-container">
+            <h2>Conócelo hoy.</h2>
+        </section>
+        <section id="plans" class="main-plans-container">
+            <div class="plans-title-container">
+            <h2>Escoge el plan que mejor se ajuste a ti.</h2>
+            <p>Cualquier plan te da acceso a nuestra plataforma.</p>
+            </div>
+            <section class="plans-container-slider">
+                <article class="plans-container-card">
+                    <p class="recommended">Recomendado</p>
+                    <div class="plan-info-container">
+                        <h3 class="plan-card-title">Pago Anual</h3>
+                        <p class="plan-card-price"><span>$</span> 99</p>
+                        <p class="plan-card-saving">* Ahorras $120 comparado con el plan mensual.</p>
+                        <button class="plan-card-ca">Escoge este <span></span></button>
+                    </div>
+                </article>
+                <article class="plans-container-card">
+                    <p class="basic">Basic</p>
+                    <div class="plan-info-container">
+                        <h3 class="plan-card-title">Pago Mensual</h3>
+                        <p class="plan-card-price"><span class="dollarsign">$</span> 25</p>
+                        <p class="plan-card-saving">* Basic plan pero obtienes algunas ventajas</p>
+                        <button class="plan-card-ca2">Escoge este <span></span></button>
+                    </div>
+                </article>
+                <article class="plans-container-card">
+                    <p class="limited">Limited</p>
+                    <div class="plan-info-container">
+                        <h3 class="plan-card-title">Pago Mensual</h3>
+                        <p class="plan-card-price"><span class="dollarsign">$</span> 10</p>
+                        <p class="plan-card-saving">* Limited plan pierdes algunas ventajas</p>
+                        <button class="plan-card-ca3">Escoge este <span></span></button>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <!-- Estructura del footer
+El pie de página se divide en dos secciones bastante simples: una con los enlaces a redes sociales y otro con el logotipo de la empresa. Conociendo esto podemos crear las etiquetas que necesitamos.
+
+En la primera sección agregamos los nombres de las redes mostradas en el diseño. Agregamos # a la dirección del enlace para evitar que se actualice la página al hacer clic sobre el mismo.
+En la segunda sección llamamos la imagen con una etiqueta img. Agregamos una descripción sobre la imagen para la parte de accesibilidad.
+Agregamos clases a cada una de las secciones con left y right, respectivamente. -->
+    <footer>
+        <section class="left">
+            <ul>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Crunchbase</a></li>
+                <li><a href="#">Hackernews</a></li>
+            </ul>
+           
+        </section>
+        <section class="right">
+            <img src="./ASSETS/img/logo-footer.svg" alt="logo de Batatabit">
+        </section>
+    </footer>
+
+</body>
+</html>
